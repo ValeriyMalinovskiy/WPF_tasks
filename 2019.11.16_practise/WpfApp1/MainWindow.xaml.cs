@@ -25,26 +25,21 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        private int Counter { get; set; } = 0;
-
-        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        private void OnAddButtonClick(object sender, RoutedEventArgs e)
         {
-            this.ListOfItems.Items.Add($"NewItem{this.Counter}");
-
-            if (this.Counter == 1)
+            if (!string.IsNullOrWhiteSpace(this.EnteredText.Text))
             {
-                this.ListOfItems.Items.Remove($"NewItem{this.Counter - 1}");
-
-                this.Counter++;
+                this.ListOfItems.Items.Add(this.EnteredText.Text);
             }
+
         }
 
-        private void ButtonDelete_Click(object sender, RoutedEventArgs e)
+        private void OnDeleteButtonClick(object sender, RoutedEventArgs e)
         {
-
+            this.ListOfItems.Items.Remove(this.ListOfItems.SelectedItem);
         }
 
-        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        private void OnClearButtonClick(object sender, RoutedEventArgs e)
         {
             this.ListOfItems.Items.Clear();
         }
