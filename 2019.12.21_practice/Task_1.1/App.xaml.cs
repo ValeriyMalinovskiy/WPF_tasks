@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace _2019._12._21_practice
+namespace Task_1._1
 {
     /// <summary>
     /// Interaction logic for App.xaml

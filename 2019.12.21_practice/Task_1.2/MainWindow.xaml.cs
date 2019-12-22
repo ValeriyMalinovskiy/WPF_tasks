@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _2019._12._21_practice
+namespace Task_1._2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

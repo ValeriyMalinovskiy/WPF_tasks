@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _2019._12._21_practice.Properties
+namespace Task_1._1.Properties
 {
 
 
