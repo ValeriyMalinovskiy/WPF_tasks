@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Task10"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="350">
-    <Grid Background="AliceBlue" ShowGridLines="True">
+    <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition>
             </ColumnDefinition>
@@ -16,7 +16,15 @@
             <RowDefinition>
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" ShowGridLines="True" >
+        <TextBlock Grid.Row="0" Grid.Column="0" Background="Transparent">
+            <Viewbox>
+               <TextBox Grid.Row="0" Grid.Column="0" Background="Transparent" BorderThickness="0"
+                        HorizontalAlignment="Right" VerticalAlignment="Center">
+                   
+               </TextBox>
+               </Viewbox>
+        </TextBlock>
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -31,7 +39,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Column="0" Grid.Row="0" Margin="3" Padding="5" Background="Beige">
+            <Button Grid.Column="0" Grid.Row="0" Margin="3" Padding="5" Background="Beige" >
                 <Viewbox>
                     <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
@@ -43,112 +51,112 @@
             </Button>
             <Button Grid.Column="0" Grid.Row="2" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="x^2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="7"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="0" Grid.Row="3" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="4"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="0" Grid.Row="4" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="0" Grid.Row="5" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="+/-"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="1" Grid.Row="0" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="CE"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="1" Grid.Row="1" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="x^2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="1" Grid.Row="3" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="1" Grid.Row="4" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="1" Grid.Row="5" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="1" Grid.Row="2" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="8"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="2" Grid.Row="2" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="9"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="2" Grid.Row="3" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="6"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="2" Grid.Row="4" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="2" Grid.Row="5" Margin="3" Padding="5" Background="LightGray">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="."  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="3" Grid.Row="2" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="X"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="3" Grid.Row="3" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="-"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="3" Grid.Row="4" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="+"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
-            <Button Grid.Column="3" Grid.Row="5" Margin="3" Padding="5" Background="Beige">
+            <Button Grid.Column="3" Grid.Row="5" Margin="3" Padding="5" Background="RosyBrown">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="="  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="2" Grid.Row="0" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="C"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="2" Grid.Row="1" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="sqr"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="3" Grid.Row="0" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="del"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
             <Button Grid.Column="3" Grid.Row="1" Margin="3" Padding="5" Background="Beige">
                 <Viewbox>
-                    <TextBlock Text="%"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Text="/"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </Viewbox>
             </Button>
         </Grid>
