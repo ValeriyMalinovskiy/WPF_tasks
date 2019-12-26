@@ -24,5 +24,15 @@ namespace Task10
         {
             InitializeComponent();
         }
+
+        private void Buttons_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void Buttons_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
