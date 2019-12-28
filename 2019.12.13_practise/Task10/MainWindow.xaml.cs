@@ -30,76 +30,99 @@ namespace Task10
             bind.Executed += Bind_Executed;
             this.CommandBindings.Add(bind);
 
-        //        < StackPanel >
-        //< Button Margin = "50" Content = "Open" Command = "ApplicationCommands.Open" ></ Button >
-     
-        //     < CheckBox x: Name = "CheckStatusBox" Margin = "50" Content = "Turn on to enable button" Command = "local:MyCommands.ChangeButtonStatus" ></ CheckBox >
-             
-        //         </ StackPanel >
+            //        < StackPanel >
+            //< Button Margin = "50" Content = "Open" Command = "ApplicationCommands.Open" ></ Button >
 
-        //                 var bind = new CommandBinding(ApplicationCommands.Open);
+            //     < CheckBox x: Name = "CheckStatusBox" Margin = "50" Content = "Turn on to enable button" Command = "local:MyCommands.ChangeButtonStatus" ></ CheckBox >
 
-        //    bind.Executed += Bind_Executed;
-        //    bind.CanExecute += Bind_CanExecute;
+            //         </ StackPanel >
 
-        //    this.CommandBindings.Add(bind);
+            //                 var bind = new CommandBinding(ApplicationCommands.Open);
 
-        //    var bind2 = new CommandBinding(MyCommands.ChangeButtonStatus);
+            //    bind.Executed += Bind_Executed;
+            //    bind.CanExecute += Bind_CanExecute;
 
-        //    bind2.Executed += Bind2_Executed;
-        //    //bind2.CanExecute += Bind_CanExecute;
+            //    this.CommandBindings.Add(bind);
 
-        //    this.CommandBindings.Add(bind2);
+            //    var bind2 = new CommandBinding(MyCommands.ChangeButtonStatus);
+
+            //    bind2.Executed += Bind2_Executed;
+            //    //bind2.CanExecute += Bind_CanExecute;
+
+            //    this.CommandBindings.Add(bind2);
         }
 
         private void Bind_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            bool isZero = true;
+            string tempString = null;
+            if (this.InputBox.Text.Length == 1 && this.InputBox.Text == "0")
+            {
+                isZero = true;
+            }
+            else isZero = false;
+
             Button button = e.Source as Button;
-        switch (button.Name)
+            switch (button.Name)
             {
                 case "One":
-                    this.InputBox.Text += "1";
+                    tempString = "1";
                     break;
                 case "Two":
-                    this.InputBox.Text += "2";
+                    tempString = "2";
                     break;
                 case "Three":
-                    this.InputBox.Text += "3";
+                    tempString = "3";
                     break;
                 case "Four":
-                    this.InputBox.Text += "4";
+                    tempString = "4";
                     break;
                 case "Five":
-                    this.InputBox.Text += "5";
+                    tempString = "5";
                     break;
                 case "Six":
-                    this.InputBox.Text += "6";
+                    tempString = "6";
                     break;
                 case "Seven":
-                    this.InputBox.Text += "7";
+                    tempString = "7";
                     break;
                 case "Eight":
-                    this.InputBox.Text += "8";
+                    tempString = "8";
                     break;
                 case "Nine":
-                    this.InputBox.Text += "9";
+                    tempString = "9";
                     break;
                 case "Zero":
-                    this.InputBox.Text += "0";
+                    tempString = "0";
                     break;
                 case "Del":
                     this.InputBox.Text = DeleteLastChar(this.InputBox.Text);
                     break;
                 case "Ce":
                     this.InputBox.Text = string.Empty;
-                    this.InputBox.Text += "0";
+                    tempString = "0";
+                    break;
+            }
+
+            switch (isZero)
+            {
+                case true:
+                    {
+                        this.InputBox.Text = tempString;
+                    }
+                    break;
+
+                case false:
+                    {
+                        this.InputBox.Text += tempString;
+                    }
                     break;
             }
         }
 
         private string DeleteLastChar(string str)
         {
-            if (str.Length>0)
+            if (str.Length > 1)
             {
                 char[] tempArr = str.ToArray();
                 StringBuilder sb = new StringBuilder();
@@ -108,6 +131,10 @@ namespace Task10
                     sb.Append(tempArr[i]);
                 }
                 return sb.ToString();
+            }
+            else if (str.Length==1)
+            {
+                return this.InputBox.Text = "0";
             }
             return str;
         }
