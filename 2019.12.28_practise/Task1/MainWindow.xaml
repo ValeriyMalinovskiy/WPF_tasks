@@ -1,0 +1,23 @@
+﻿<Window x:Class="Task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MouseDown="Border_MouseDown" MouseEnter="_MouseEnter" ScrollBar.Scroll="Window_Scroll">
+    <Window.Resources>
+        <local:BrushColorConverter x:Key="convKey"></local:BrushColorConverter>
+    </Window.Resources>
+        <Border Margin="50" BorderThickness="8" CornerRadius="10" Visibility="Visible" BorderBrush="Blue" Padding="10" MouseEnter="_MouseEnter" ButtonBase.Click="_Click">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="MyStack" MouseEnter="_MouseEnter">
+                <Ellipse StrokeThickness="2" Stroke="Red" Height="40" Width="500" Margin="5" Fill="{Binding ElementName=MyCheckBox, Path=IsChecked,Converter={StaticResource convKey}}" MouseDown="Border_MouseDown" MouseEnter="_MouseEnter"></Ellipse>
+                <Button Padding="10" MouseEnter="_MouseEnter" Click="Button_Click_1">
+                    <Rectangle Width="500" Height="50" RadiusX="10" RadiusY="10" Fill="Cyan" MouseDown="Border_MouseDown"></Rectangle>
+                </Button>
+                <CheckBox x:Name="MyCheckBox" Margin="10">Is ellipse filled</CheckBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>
