@@ -1,0 +1,55 @@
+﻿<Window x:Class="Author_s_book_list.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Author_s_book_list"
+        xmlns:AuthorDetails="clr-namespace:Author_s_book_list.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListView x:Name="AuthorListView">
+            </ListView>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="0.15*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Padding="2">New</Button>
+                    <Button Margin="5,0,0,0" Padding="2">Change</Button>
+                    <Button Margin="5,0,0,0" Padding="2">Delete</Button>
+                </StackPanel>
+                <AuthorDetails:AuthorDetails DataContext="{Binding ElementName=AuthorListView, Path=SelectedItem}"></AuthorDetails:AuthorDetails>
+            </Grid>
+        </Grid>
+        <Menu Grid.Row="0">
+            <MenuItem Margin="5" Header="File">
+                <Label>New Author</Label>
+                <Label>New Book</Label>
+                <Label>Remove Authtor</Label>
+                <Label>Remove Book</Label>
+            </MenuItem>
+            <MenuItem Margin="5" Header="Edit">
+                <Label>Edit Author</Label>
+                <Label>Edit Book</Label>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal">
+            <Button Padding="2">New</Button>
+            <Button Margin="5,0,0,0" Padding="2">Change</Button>
+            <Button Margin="5,0,0,0" Padding="2">Delete</Button>
+        </StackPanel>
+    </Grid>
+</Window>
