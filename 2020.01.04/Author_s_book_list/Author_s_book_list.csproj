@@ -66,6 +66,9 @@
     <Compile Include="Views\AuthorDetails.xaml.cs">
       <DependentUpon>AuthorDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NewAuthorWindow.xaml.cs">
+      <DependentUpon>NewAuthorWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +82,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AuthorDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewAuthorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

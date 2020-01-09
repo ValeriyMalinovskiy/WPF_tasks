@@ -46,8 +46,8 @@
                 <Label>Edit Book</Label>
             </MenuItem>
         </Menu>
-        <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal">
-            <Button Padding="2">New</Button>
+        <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal" >
+            <Button Padding="2" Click="Button_Click">New</Button>
             <Button Margin="5,0,0,0" Padding="2">Change</Button>
             <Button Margin="5,0,0,0" Padding="2">Delete</Button>
         </StackPanel>

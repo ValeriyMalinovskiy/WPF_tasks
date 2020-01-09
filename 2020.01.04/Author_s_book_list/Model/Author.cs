@@ -16,6 +16,8 @@ namespace Author_s_book_list.Class
 
         public DateTime YearOfBirth { get; set; }
 
+        public Language AuthorLanguage { get; set; }
+
         public Country Country { get; set; }
 
         public Country CountryOfBirth { get; set; }
@@ -26,11 +28,12 @@ namespace Author_s_book_list.Class
 
         public ObservableCollection<Book> BookCollection { get; }
 
-        public Author(string firstName, string lastName, DateTime yearOfBirth, Country country, Country countryOfBirth, State stateOfBirth, City cityOfBirth)
+        public Author(string firstName, string lastName, DateTime yearOfBirth, Language language, Country country, Country countryOfBirth, State stateOfBirth, City cityOfBirth)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.YearOfBirth = yearOfBirth;
+            this.AuthorLanguage = language;
             this.Country = country;
             this.CountryOfBirth = countryOfBirth;
             this.CityOfBirth = cityOfBirth;
@@ -46,6 +49,11 @@ namespace Author_s_book_list.Class
         {
             //this.bookCollection.RemoveAt(this.bookCollection.IndexOf(this.bookCollection.First(b => b.Id == bookId)));
             this.BookCollection.Remove(this.BookCollection.First(b => b.Id == bookId));
+        }
+
+        public override string ToString()
+        {
+            return this.FirstName.ToString() + " " + this.LastName.ToString();
         }
     }
 }
