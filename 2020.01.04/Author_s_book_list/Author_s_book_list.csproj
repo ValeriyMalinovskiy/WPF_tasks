@@ -55,13 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command\CustomCommands.cs" />
     <Compile Include="Model\Author.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\EntityBase.cs" />
     <Compile Include="Enums\Country.cs" />
     <Compile Include="Enums\Language.cs" />
     <Compile Include="Enums\City.cs" />
-    <Compile Include="Enums\State.cs" />
     <Compile Include="Tools\IdGenerator.cs" />
     <Compile Include="Views\AuthorDetails.xaml.cs">
       <DependentUpon>AuthorDetails.xaml</DependentUpon>

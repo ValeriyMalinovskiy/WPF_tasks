@@ -4,18 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Author_s_book_list.Views"
+        xmlns:command="clr-namespace:Author_s_book_list.Command"
         mc:Ignorable="d"
         Title="NewAuthorWindow" Height="300" Width="250"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:CountryAlias="clr-namespace:Author_s_book_list.Enums"
         xmlns:CityAlias="clr-namespace:Author_s_book_list.Enums"
         xmlns:LanguageAlias="clr-namespace:Author_s_book_list.Enums">
-    
+
+    <Window.CommandBindings>
+        <CommandBinding Command="command:CustomCommands.Ok"
+                        Executed="OkCommandExecuted"
+                        CanExecute="OkCommandCanExecute">
+        </CommandBinding>
+    </Window.CommandBindings>
+
+
     <Window.Resources>
-        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+        <ObjectDataProvider x:Key="countryEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="CountryAlias:Country"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="languageEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="LanguageAlias:Language"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="cityEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="CityAlias:City"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
@@ -43,19 +60,19 @@
             <Label Grid.Row="4">Language</Label>
             <Label Grid.Row="5">Place of Birth</Label>
 
-            <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
-            <Label Grid.Row="2" Grid.Column="1">DTP</Label>
-            <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Source={StaticResource dataFromEnum}}"></ComboBox>
-            <Label Grid.Row="4" Grid.Column="1">Language</Label>
-            <Label Grid.Row="5" Grid.Column="1">Place of Birth</Label>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=FirstName}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}"></TextBox>
+            <DatePicker Name="DateOfBirth" Grid.Row="2" Grid.Column="1" SelectedDate="{Binding Path=DateOfBirth}"></DatePicker>
+            <ComboBox Name="Country" Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Source={StaticResource countryEnum}}" SelectedItem="{Binding Path=Country}"></ComboBox>
+            <ComboBox Name="Language" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Source={StaticResource languageEnum}}" SelectedItem="{Binding Path=Language}"></ComboBox>
+            <TextBox Name="PlaceOfBirth" Grid.Row="5" Grid.Column="1" Text="{Binding Path=PlaceOfBirth}"></TextBox>
         </Grid>
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="10">Ok</Button>
+            <Button Grid.Column="0" Margin="10" Command="command:CustomCommands.Ok">Ok</Button>
             <Button Grid.Column="1" Margin="10">Cancel</Button>
         </Grid>
     </StackPanel>

@@ -29,11 +29,19 @@ namespace Author_s_book_list
         {
             InitializeComponent();
 
-            Author author = new Author("Mark", "Twain", new DateTime(1835, 11, 30), Enums.Language.English ,Enums.Country.USA, Enums.Country.USA, Enums.State.Missouri, Enums.City.Florida);
-            author.AddBook(new Book("Book1", new DateTime(), 30));
+            Author author1 = new Author("Mark", "Twain", new DateTime(1835, 11, 30), Enums.Language.English ,Enums.Country.USA, "Missouri");
+            Author author2 = new Author("Mark2", "Twain2", new DateTime(1835, 10, 23), Enums.Language.German ,Enums.Country.Russia, "NewJersey");
+            author1.AddBook(new Book("Book1", new DateTime(), 30));
+            author2.AddBook(new Book("Book1", new DateTime(), 34));
             AuthorCollection = new ObservableCollection<Author>();
-            AuthorCollection.Add(author);
+            AuthorCollection.Add(author1);
+            AuthorCollection.Add(author2);
             this.AuthorListView.ItemsSource = AuthorCollection;
+        }
+
+        private void Bind_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public void AddAuthor(Author author)
@@ -41,23 +49,21 @@ namespace Author_s_book_list
             this.AuthorCollection.Add(author);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            NewAuthorWindow newAuthorWindow = new NewAuthorWindow();
-            newAuthorWindow.Show();
+            bool newAuthSucc = false;
+            Author tempAuth = new Author();
+            NewAuthorWindow newAuthorWindow = new NewAuthorWindow(tempAuth);
+            newAuthSucc = newAuthorWindow.ShowDialog().Value;
+            if (newAuthSucc)
+            {
+                this.AuthorCollection.Add(tempAuth);
+            }
         }
-    }
 
-    public static class CustomCommand
-    {
-        public static RoutedCommand Change { get; set; }
-
-        public static RoutedCommand Ok { get; set; }
-
-        static CustomCommand()
+        private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            CustomCommand.Change = new RoutedCommand(nameof(Change), typeof(Window));
-            CustomCommand.Ok = new RoutedCommand(nameof(Change), typeof(Window));
+            e.CanExecute = true;
         }
     }
 }

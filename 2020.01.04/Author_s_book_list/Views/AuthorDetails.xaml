@@ -27,10 +27,10 @@
             <Label Grid.Row="2" Grid.Column="2">Place of birth</Label>
             <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=FirstName}"></Label>
             <Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=LastName}"></Label>
-            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=YearOfBirth}"></Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=DateOfBirth}"></Label>
             <Label Grid.Row="0" Grid.Column="3" Content="{Binding Path=Country}"></Label>
-            <Label Grid.Row="1" Grid.Column="3" Content="{Binding Path=AuthorLanguage}"></Label>
-            <Label Grid.Row="2" Grid.Column="3" Content="{Binding Path=CityOfBirth}"></Label>
+            <Label Grid.Row="1" Grid.Column="3" Content="{Binding Path=Language}"></Label>
+            <Label Grid.Row="2" Grid.Column="3" Content="{Binding Path=PlaceOfBirth}"></Label>
         </Grid>
     </GroupBox>
 </UserControl>

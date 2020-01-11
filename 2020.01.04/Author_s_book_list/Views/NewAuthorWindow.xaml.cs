@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Author_s_book_list.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,20 @@ namespace Author_s_book_list.Views
     /// </summary>
     public partial class NewAuthorWindow : Window
     {
-        public NewAuthorWindow()
+        public NewAuthorWindow(Author author)
         {
             InitializeComponent();
+            this.DataContext = author;
+        }
+
+        private void OkCommandExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+
+        private void OkCommandCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
         }
     }
 }

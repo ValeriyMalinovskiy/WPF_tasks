@@ -14,30 +14,29 @@ namespace Author_s_book_list.Class
         
         public string LastName { get; set; }
 
-        public DateTime YearOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
-        public Language AuthorLanguage { get; set; }
+        public Language Language { get; set; }
 
         public Country Country { get; set; }
 
-        public Country CountryOfBirth { get; set; }
-
-        public State StateOfBirth { get; set; }
-
-        public City CityOfBirth { get; set; }
+        public string PlaceOfBirth { get; set; }
 
         public ObservableCollection<Book> BookCollection { get; }
 
-        public Author(string firstName, string lastName, DateTime yearOfBirth, Language language, Country country, Country countryOfBirth, State stateOfBirth, City cityOfBirth)
+        public Author(string firstName, string lastName, DateTime dateOfBirth, Language language, Country country, string placeOfBirth)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.YearOfBirth = yearOfBirth;
-            this.AuthorLanguage = language;
+            this.DateOfBirth = dateOfBirth;
+            this.Language = language;
             this.Country = country;
-            this.CountryOfBirth = countryOfBirth;
-            this.CityOfBirth = cityOfBirth;
+            this.PlaceOfBirth = placeOfBirth;
             this.BookCollection = new ObservableCollection<Book>();
+        }
+
+        public Author()
+        {
         }
 
         public void AddBook(Book book)

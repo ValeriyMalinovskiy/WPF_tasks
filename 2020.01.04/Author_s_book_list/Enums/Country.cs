@@ -10,6 +10,7 @@ namespace Author_s_book_list.Enums
     {
         USA,
         Germany,
-        Russia
+        Russia,
+        Ukraine
     }
 }
