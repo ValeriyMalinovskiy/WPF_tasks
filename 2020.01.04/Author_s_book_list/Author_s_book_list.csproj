@@ -63,11 +63,15 @@
     <Compile Include="Enums\Language.cs" />
     <Compile Include="Enums\City.cs" />
     <Compile Include="Tools\IdGenerator.cs" />
+    <Compile Include="Tools\IsNewToTextConverter.cs" />
     <Compile Include="Views\AuthorDetails.xaml.cs">
       <DependentUpon>AuthorDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewAuthorWindow.xaml.cs">
       <DependentUpon>NewAuthorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewBookWindow.xaml.cs">
+      <DependentUpon>NewBookWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NewAuthorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

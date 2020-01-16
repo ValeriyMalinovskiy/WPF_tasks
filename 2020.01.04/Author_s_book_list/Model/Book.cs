@@ -20,5 +20,9 @@ namespace Author_s_book_list.Class
             this.ReleaseDate = releaseDate;
             this.Value = value;
         }
+
+        public Book()
+        {
+        }
     }
 }

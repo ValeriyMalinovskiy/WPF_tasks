@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Author_s_book_list.Views"
+        xmlns:convert="clr-namespace:Author_s_book_list.Tools"
         xmlns:command="clr-namespace:Author_s_book_list.Command"
         mc:Ignorable="d"
         Title="NewAuthorWindow" Height="300" Width="250"
@@ -36,10 +37,11 @@
                 <x:Type TypeName="CityAlias:City"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <convert:IsNewToTextConverter x:Key="IsNewToTextConverter"/>
     </Window.Resources>
 
     <StackPanel>
-        <Label HorizontalAlignment="Center">Header</Label>
+        <Label HorizontalAlignment="Center" Content="{Binding Converter={StaticResource IsNewToTextConverter}}"></Label>
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>

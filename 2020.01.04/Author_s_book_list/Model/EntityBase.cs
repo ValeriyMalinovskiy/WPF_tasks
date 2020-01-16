@@ -13,10 +13,10 @@ namespace Author_s_book_list.Class
 
         public bool IsNew { get; set; }
 
-        public EntityBase()
+        public EntityBase(bool isNew = true)
         {
             this.Id = new IdGenerator().GenerateId();
-            this.IsNew = true;
+            this.IsNew = isNew;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Author_s_book_list.Class
 
         public ObservableCollection<Book> BookCollection { get; }
 
-        public Author(string firstName, string lastName, DateTime dateOfBirth, Language language, Country country, string placeOfBirth)
+        public Author(string firstName, string lastName, DateTime dateOfBirth, Language language, Country country, string placeOfBirth):base(false)
         {
             this.FirstName = firstName;
             this.LastName = lastName;

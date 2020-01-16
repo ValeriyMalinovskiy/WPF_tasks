@@ -4,17 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Author_s_book_list"
+        xmlns:command="clr-namespace:Author_s_book_list.Command"
         xmlns:AuthorDetails="clr-namespace:Author_s_book_list.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
     <Window.CommandBindings>
         <CommandBinding Command="New"
                         Executed="NewCommand_Executed"
                         CanExecute="NewCommand_CanExecute">
         </CommandBinding>
+        <CommandBinding Command="Delete"
+                        Executed="DeleteCommand_Executed"
+                        CanExecute="DeleteCommand_CanExecute">
+        </CommandBinding>
+        <CommandBinding Command="command:CustomCommands.Change"
+                        Executed="ChangeCommand_Executed"
+                        CanExecute="ChangeCommand_CanExecute">
+        </CommandBinding>
+
     </Window.CommandBindings>
-                    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"></RowDefinition>
@@ -34,10 +44,17 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition Height="0.15*"></RowDefinition>
                 </Grid.RowDefinitions>
+                <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=AuthorListView, Path=SelectedItem.BookCollection}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="#" Width="20" Binding="{Binding Path =Id}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Title" Binding="{Binding Path =Title}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Date" Binding="{Binding Path=ReleaseDate}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
                 <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Padding="2">New</Button>
-                    <Button Margin="5,0,0,0" Padding="2">Change</Button>
-                    <Button Margin="5,0,0,0" Padding="2">Delete</Button>
+                    <Button x:Name="NewBookButton" Padding="2" Command="New">New</Button>
+                    <Button x:Name="ChangeBookButton" Margin="5,0,0,0" Padding="2">Change</Button>
+                    <Button x:Name="DeleteBookButton" Margin="5,0,0,0" Padding="2">Delete</Button>
                 </StackPanel>
                 <AuthorDetails:AuthorDetails DataContext="{Binding ElementName=AuthorListView, Path=SelectedItem}"></AuthorDetails:AuthorDetails>
             </Grid>
@@ -55,9 +72,9 @@
             </MenuItem>
         </Menu>
         <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal" >
-            <Button Padding="2" Command="New">New</Button>
-            <Button Margin="5,0,0,0" Padding="2">Change</Button>
-            <Button Margin="5,0,0,0" Padding="2">Delete</Button>
+            <Button x:Name="NewAuthorButton" Padding="2" Command="New">New</Button>
+            <Button x:Name="ChangeAuthorButton" Margin="5,0,0,0" Padding="2" Command="command:CustomCommands.Change">Change</Button>
+            <Button x:Name="DeleteAuthorButton" Margin="5,0,0,0" Padding="2" Command="Delete">Delete</Button>
         </StackPanel>
     </Grid>
 </Window>
