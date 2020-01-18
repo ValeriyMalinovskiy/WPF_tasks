@@ -11,13 +11,45 @@
     <UserControl.DataContext>
         <ViewModel:MainWindowViewModel></ViewModel:MainWindowViewModel>
 </UserControl.DataContext>
-    
-    <Grid>
+
+    <StackPanel>
+        <DataGrid MinHeight="300" Padding="10" Height="100">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="ID"></DataGridTextColumn>
+            <DataGridTextColumn Header="Name"></DataGridTextColumn>
+            <DataGridTextColumn Header="Department"></DataGridTextColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" AutoGenerateColumns="True" ItemsSource="{Binding Customers}"></DataGrid>
-        <Button Grid.Row="1" Command="{Binding GetCommand}">Get</Button>
+        <Label Grid.Row="0" Grid.Column="0">Name</Label>
+        <Label Grid.Row="1" Grid.Column="0">Hiring date</Label>
+        <Label Grid.Row="0" Grid.Column="2">Department</Label>
+        <CheckBox Grid.Row="1" Grid.Column="2">Is manager</CheckBox>
+        <TextBox Grid.Row="0"  Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="3"></TextBox>
     </Grid>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Margin="10" Grid.Column="0">New</Button>
+        <Button Margin="10" Grid.Column="1">Delete</Button>
+        <Button Margin="10" Grid.Column="3">Show</Button>
+    </Grid>
+    </StackPanel>
 </UserControl>

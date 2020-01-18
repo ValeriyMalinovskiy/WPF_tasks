@@ -13,32 +13,16 @@ namespace View_ViewModel.ViewModel
 {
     class MainWindowViewModel
     {
-        public ObservableCollection<Customer> Customers { get; set; }
-
-        private ICustomersRepository CustomersRepository { get; set; }
-
-        public ICommand GetCommand { get; set; }
-
+        public ObservableCollection<Employee> Employees { get; set; }
 
         public MainWindowViewModel()
         {
-            this.Customers = new ObservableCollection<Customer>();
-            this.GetCommand = new RelayCommand(this.GetCommandExecute, this.GetCommandCanExecute);
-            this.CustomersRepository = new CustomersRepository();
+            this.Employees = new ObservableCollection<Employee>();
         }
 
         public bool GetCommandCanExecute(object obj)
         {
             return true;
-        }
-
-        public async void GetCommandExecute(object obj)
-        {
-            List<Customer> customers = await this.CustomersRepository.GetCustomersAsync();
-            foreach (var customer in customers)
-            {
-                this.Customers.Add(customer);
-            }
         }
     }
 }

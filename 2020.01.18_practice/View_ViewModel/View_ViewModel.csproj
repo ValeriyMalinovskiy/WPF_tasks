@@ -63,6 +63,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="Services\CustomersRepository.cs" />
     <Compile Include="Services\ICustomersRepository.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -112,12 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\2020.01.16\ZzaDashboard\Zza.Data\Zza.Data.csproj">
-      <Project>{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}</Project>
-      <Name>Zza.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
