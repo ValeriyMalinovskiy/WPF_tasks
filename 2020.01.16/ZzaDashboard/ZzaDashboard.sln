@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29509.3
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDashboard", "2020.01.16\ZzaDashboard\ZzaDashboard\ZzaDashboard.csproj", "{B4BAF275-1AAD-408E-AC04-1DBE32FD855E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDashboard", "ZzaDashboard\ZzaDashboard.csproj", "{B4BAF275-1AAD-408E-AC04-1DBE32FD855E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zza.Data", "2020.01.16\ZzaDashboard\Zza.Data\Zza.Data.csproj", "{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zza.Data", "Zza.Data\Zza.Data.csproj", "{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +24,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FB897161-3E9F-41DD-893B-69E589DC8B1E}
 	EndGlobalSection
 EndGlobal
