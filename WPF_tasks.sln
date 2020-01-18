@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDashboard", "2020.01.16\ZzaDashboard\ZzaDashboard\ZzaDashboard.csproj", "{B4BAF275-1AAD-408E-AC04-1DBE32FD855E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zza.Data", "2020.01.16\ZzaDashboard\Zza.Data\Zza.Data.csproj", "{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View_ViewModel", "2020.01.18_practice\View_ViewModel\View_ViewModel.csproj", "{9E7A36C5-2343-4B91-B35C-8E7C25DBA20D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B4BAF275-1AAD-408E-AC04-1DBE32FD855E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4BAF275-1AAD-408E-AC04-1DBE32FD855E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4BAF275-1AAD-408E-AC04-1DBE32FD855E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4BAF275-1AAD-408E-AC04-1DBE32FD855E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB1E80DE-E6D1-4E29-BC2D-DB66B81163C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E7A36C5-2343-4B91-B35C-8E7C25DBA20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7A36C5-2343-4B91-B35C-8E7C25DBA20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7A36C5-2343-4B91-B35C-8E7C25DBA20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7A36C5-2343-4B91-B35C-8E7C25DBA20D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

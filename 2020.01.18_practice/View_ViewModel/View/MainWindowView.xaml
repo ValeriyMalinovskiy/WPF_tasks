@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="View_ViewModel.View.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View_ViewModel.View"
+        xmlns:ViewModel="clr-namespace:View_ViewModel.ViewModel"
+        mc:Ignorable="d"
+        Height="Auto" Width="800">
+    
+    <UserControl.DataContext>
+        <ViewModel:MainWindowViewModel></ViewModel:MainWindowViewModel>
+</UserControl.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" AutoGenerateColumns="True" ItemsSource="{Binding Customers}"></DataGrid>
+        <Button Grid.Row="1" Command="{Binding GetCommand}">Get</Button>
+    </Grid>
+</UserControl>
