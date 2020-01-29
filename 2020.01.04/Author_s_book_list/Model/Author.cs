@@ -37,6 +37,8 @@ namespace Author_s_book_list.Class
 
         public Author()
         {
+            this.DateOfBirth = DateTime.Today;
+            this.BookCollection = new ObservableCollection<Book>();
         }
 
         public void AddBook(Book book)
@@ -46,7 +48,6 @@ namespace Author_s_book_list.Class
 
         public void RemoveBook(int bookId)
         {
-            //this.bookCollection.RemoveAt(this.bookCollection.IndexOf(this.bookCollection.First(b => b.Id == bookId)));
             this.BookCollection.Remove(this.BookCollection.First(b => b.Id == bookId));
         }
 

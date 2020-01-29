@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Author_s_book_list.Class
 {
-    public class Book:EntityBase
+    public class Book : EntityBase
     {
         public string Title { get; set; }
 
@@ -23,6 +23,7 @@ namespace Author_s_book_list.Class
 
         public Book()
         {
+            this.ReleaseDate = DateTime.Today;
         }
     }
 }
