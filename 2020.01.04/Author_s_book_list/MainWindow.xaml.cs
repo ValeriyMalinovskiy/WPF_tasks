@@ -64,12 +64,30 @@ namespace Author_s_book_list
 
         private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if ((e.Source as Button).Name == "NewBookButton" && this.AuthorListView.SelectedItem == null)
+            switch (e.Source.GetType().Name)
             {
-            }
-            else
-            {
-                e.CanExecute = true;
+                case "Button":
+                    {
+                        if ((e.Source as Button).Name == "NewBookButton" && this.AuthorListView.SelectedItem == null)
+                        {
+                        }
+                        else
+                        {
+                            e.CanExecute = true;
+                        }
+                        break;
+                    }
+                case "MenuItem":
+                    {
+                        //if ((e.Source as MenuItem).Name == "NewBookMenuItem" && this.AuthorListView.SelectedItem == null)
+                        //{
+                        //}
+                        //else
+                        {
+                            e.CanExecute = true;
+                        }
+                        break;
+                    }
             }
         }
 

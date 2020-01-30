@@ -22,7 +22,6 @@
                         Executed="ChangeCommand_Executed"
                         CanExecute="ChangeCommand_CanExecute">
         </CommandBinding>
-
     </Window.CommandBindings>
 
     <Grid>
@@ -59,17 +58,13 @@
                 <AuthorDetails:AuthorDetails DataContext="{Binding ElementName=AuthorListView, Path=SelectedItem}"></AuthorDetails:AuthorDetails>
             </Grid>
         </Grid>
-        <Menu Grid.Row="0">
+        <Menu Grid.Row="0" >
             <MenuItem x:Name="FileMenu" Margin="5" Header="File">
-                <MenuItem x:Name="NewAuthorMenuItem" Header="New Author">
-                    <MenuItem.CommandBindings>
-                        <CommandBinding Command="New" Executed="NewCommand_Executed" CanExecute="NewCommand_CanExecute"></CommandBinding>
-                    </MenuItem.CommandBindings>
-                </MenuItem>
-                <!--<MenuItem Command="New" Header="New Book"></MenuItem>
+                <MenuItem x:Name="NewAuthorMenuItem" Header="New Author" Command="New"></MenuItem>
+                <MenuItem x:Name="NewBookMenuItem" Header="New Book" Command="New"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Command="Delete" Header="Remove Author"></MenuItem>
-                <MenuItem Command="Delete" Header="Remove Book"></MenuItem>-->
+                <!--<MenuItem x:Name="DeleteAuthorMenuItem" Header="Remove Author" Command="Delete"></MenuItem>-->
+                <!--<MenuItem x:Name="DeleteBookMenuItem" Header="Remove Book" Command="Delete"></MenuItem>-->
             </MenuItem>
             <!--<MenuItem Margin="5" Header="Edit">
                 <Label>Edit Author</Label>
