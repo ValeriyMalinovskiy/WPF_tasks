@@ -14,6 +14,10 @@
                         Executed="OkCommandExecuted"
                         CanExecute="OkCommandCanExecute">
         </CommandBinding>
+        <CommandBinding Command="command:CustomCommands.Cancel"
+                        Executed="CancelCommand_Executed"
+                        CanExecute="CancelCommand_CanExecute">
+        </CommandBinding>
     </Window.CommandBindings>
 
 
@@ -37,8 +41,8 @@
             <Label Grid.Row="1">Cost</Label>
             <Label Grid.Row="2">Release date</Label>
 
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Title}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Value}"></TextBox>
+            <TextBox x:Name="Title" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Title}"></TextBox>
+            <TextBox x:Name="BookValue" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Value}"></TextBox>
             <DatePicker Name="DateOfBirth" Grid.Row="2" Grid.Column="1" SelectedDate="{Binding Path=ReleaseDate}"></DatePicker>
         </Grid>
         <Grid Margin="10">
@@ -47,7 +51,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Margin="10" Command="command:CustomCommands.Ok">Ok</Button>
-            <Button Grid.Column="1" Margin="10">Cancel</Button>
+            <Button Grid.Column="1" Margin="10" Command="command:CustomCommands.Cancel">Cancel</Button>
         </Grid>
     </StackPanel>
 </Window>

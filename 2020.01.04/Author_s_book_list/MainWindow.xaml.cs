@@ -79,7 +79,13 @@ namespace Author_s_book_list
 
         private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = true;
+            if ((e.Source as Button).Name == "NewBookButton" && this.AuthorListView.SelectedItem == null)
+            {
+            }
+            else
+            {
+                e.CanExecute = true;
+            }
         }
 
         private void DeleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -89,7 +95,10 @@ namespace Author_s_book_list
 
         private void DeleteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (this.AuthorListView.SelectedItem!=null)
+            if ((e.Source as Button).Name == "DeleteBookButton" && this.BookCollection.SelectedItem == null)
+            {
+            }
+            else if (this.AuthorListView.SelectedItem != null)
             {
                 e.CanExecute = true;
             }
@@ -97,13 +106,24 @@ namespace Author_s_book_list
 
         private void ChangeCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            NewAuthorWindow newAuthorWindow = new NewAuthorWindow(this.AuthorListView.SelectedItem as Author);
-            newAuthorWindow.ShowDialog();
+            if ((e.Source as Button).Name == "ChangeBookButton")
+            {
+                NewBookWindow newBookWindow = new NewBookWindow(this.BookCollection.SelectedItem as Book);
+                newBookWindow.ShowDialog();
+            }
+            else
+            {
+                NewAuthorWindow newAuthorWindow = new NewAuthorWindow(this.AuthorListView.SelectedItem as Author);
+                newAuthorWindow.ShowDialog();
+            }
         }
 
         private void ChangeCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (this.AuthorListView.SelectedItem != null)
+            if ((e.Source as Button).Name == "ChangeBookButton" && this.BookCollection.SelectedItem == null)
+            {
+            }
+            else if (this.AuthorListView.SelectedItem != null)
             {
                 e.CanExecute = true;
             }

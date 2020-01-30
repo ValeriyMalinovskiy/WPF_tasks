@@ -14,7 +14,7 @@ namespace Author_s_book_list.Class
 
         public decimal Value { get; set; }
 
-        public Book(string title, DateTime releaseDate, decimal value)
+        public Book(string title, DateTime releaseDate, decimal value) : base(false)
         {
             this.Title = title;
             this.ReleaseDate = releaseDate;
