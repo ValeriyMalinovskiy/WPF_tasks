@@ -60,16 +60,21 @@
             </Grid>
         </Grid>
         <Menu Grid.Row="0">
-            <MenuItem Margin="5" Header="File">
-                <Label>New Author</Label>
-                <Label>New Book</Label>
-                <Label>Remove Authtor</Label>
-                <Label>Remove Book</Label>
+            <MenuItem x:Name="FileMenu" Margin="5" Header="File">
+                <MenuItem x:Name="NewAuthorMenuItem" Header="New Author">
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="New" Executed="NewCommand_Executed" CanExecute="NewCommand_CanExecute"></CommandBinding>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
+                <!--<MenuItem Command="New" Header="New Book"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Command="Delete" Header="Remove Author"></MenuItem>
+                <MenuItem Command="Delete" Header="Remove Book"></MenuItem>-->
             </MenuItem>
-            <MenuItem Margin="5" Header="Edit">
+            <!--<MenuItem Margin="5" Header="Edit">
                 <Label>Edit Author</Label>
                 <Label>Edit Book</Label>
-            </MenuItem>
+            </MenuItem>-->
         </Menu>
         <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal" >
             <Button x:Name="NewAuthorButton" Padding="2" Command="New">New</Button>

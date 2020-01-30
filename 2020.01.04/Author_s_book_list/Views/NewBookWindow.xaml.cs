@@ -1,17 +1,7 @@
 ﻿using Author_s_book_list.Class;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Author_s_book_list.Views
 {
@@ -33,7 +23,7 @@ namespace Author_s_book_list.Views
 
         private void OkCommandCanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(this.Title.Text) || !Decimal.TryParse(this.BookValue.Text,out decimal result))
+            if (string.IsNullOrEmpty(this.Title.Text) || !Decimal.TryParse(this.BookValue.Text, out decimal result))
             {
             }
             else
