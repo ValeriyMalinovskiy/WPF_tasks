@@ -19,18 +19,18 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="0">First name</Label>
-            <Label Grid.Row="1" Grid.Column="0">Last name</Label>
-            <Label Grid.Row="2" Grid.Column="0">Birth date</Label>
-            <Label Grid.Row="0" Grid.Column="2">Country</Label>
-            <Label Grid.Row="1" Grid.Column="2">Language</Label>
-            <Label Grid.Row="2" Grid.Column="2">Place of birth</Label>
-            <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=FirstName}"></Label>
-            <Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=LastName}"></Label>
-            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=DateOfBirth}"></Label>
-            <Label Grid.Row="0" Grid.Column="3" Content="{Binding Path=Country}"></Label>
-            <Label Grid.Row="1" Grid.Column="3" Content="{Binding Path=Language}"></Label>
-            <Label Grid.Row="2" Grid.Column="3" Content="{Binding Path=PlaceOfBirth}"></Label>
+            <TextBlock Grid.Row="0" Grid.Column="0">First name</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0">Last name</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0">Birth date</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2">Country</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2">Language</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="2">Place of birth</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=FirstName}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=DateOfBirth, StringFormat='{}{0:dd/MM/yyyy}'}"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding Path=Country}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding Path=Language}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding Path=PlaceOfBirth}"></TextBlock>
         </Grid>
     </GroupBox>
 </UserControl>

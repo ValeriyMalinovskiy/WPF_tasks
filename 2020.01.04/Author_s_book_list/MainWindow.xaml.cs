@@ -68,13 +68,24 @@ namespace Author_s_book_list
             {
                 case "Button":
                     {
-                        if ((e.Source as Button).Name == "NewBookButton" && this.AuthorListView.SelectedItem == null)
+                        switch ((e.Source as Button).Name)
                         {
+                            case "NewBookButton":
+                                {
+                                    if (this.AuthorListView.SelectedItem != null)
+                                    {
+                                        e.CanExecute = true;
+                                    }
+                                }
+                                break;
                         }
-                        else
-                        {
-                            e.CanExecute = true;
-                        }
+                        //if ((e.Source as Button).Name == "NewBookButton" && this.AuthorListView.SelectedItem == null)
+                        //{
+                        //}
+                        //else
+                        //{
+                        //    e.CanExecute = true;
+                        //}
                         break;
                     }
                 case "MenuItem":
