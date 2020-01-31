@@ -1,0 +1,21 @@
+﻿<Window x:Class="lection_example_24_dec.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:lection_example_24_dec"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <local:Pupil x:Key="FirstName">Vasya</local:Pupil>
+        </Grid.Resources>
+
+        <StackPanel>
+            <TextBox> Text="{Binding Source={StaticResource LastName}}</TextBox>
+        </StackPanel>
+        <CheckBox DataContext="{Binding Source={StaticResource IsManager}}" IsChecked="False"></CheckBox>
+    </Grid>
+</Window>
+    
