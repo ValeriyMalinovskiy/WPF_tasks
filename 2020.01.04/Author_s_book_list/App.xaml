@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Author_s_book_list.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Author_s_book_list"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources />
+</Application>
