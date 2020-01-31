@@ -2,12 +2,12 @@
 
 namespace Author_s_book_list.Tools
 {
-    class IdGenerator
+    internal class IdGenerator
     {
-        public double GenerateId()
+        private static int counter = 0;
+        public static int GenerateId()
         {
-            double id = Convert.ToDouble(DateTime.Now.Ticks);
-            return id;
+            return ++counter;
         }
     }
 }

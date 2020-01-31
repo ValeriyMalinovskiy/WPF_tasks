@@ -43,7 +43,7 @@ namespace Author_s_book_list.Class
             this.BookCollection.Add(book);
         }
 
-        public void RemoveBook(double bookId)
+        public void RemoveBook(int bookId)
         {
             this.BookCollection.Remove(this.BookCollection.First(b => b.Id == bookId));
         }

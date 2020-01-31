@@ -22,7 +22,7 @@ namespace Author_s_book_list
             Author author1 = new Author("Mark", "Twain", new DateTime(1835, 11, 30), Enums.Language.English, Enums.Country.USA, "Florida, Missouri");
             Author author2 = new Author("O.", "Henry", new DateTime(1862, 09, 11), Enums.Language.English, Enums.Country.USA, "Greensboro, North Carolina");
             Author author3 = new Author("Isaac", "Asimov", new DateTime(1920, 01, 2), Enums.Language.English, Enums.Country.Russia, "Petrovichi, Smolensk Governorate");
-            author1.AddBook(new Book("The Adventures of Tom Sawyer", new DateTime(1876, 01, 01), 30));
+            author1.AddBook(new Book("The Adventures of Tom Sawyer", new DateTime(1876, 01, 01),30));
             author2.AddBook(new Book("The Gift of the Magi", new DateTime(1905, 12, 10), 34));
             author2.AddBook(new Book("The Ransom of Red Chief", new DateTime(1907, 07, 06), 34));
             AuthorCollection = new ObservableCollection<Author>();
