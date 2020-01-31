@@ -1,6 +1,7 @@
 ﻿using Author_s_book_list.Class;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Author_s_book_list.Views
@@ -16,30 +17,45 @@ namespace Author_s_book_list.Views
             this.DataContext = book;
         }
 
-        private void OkCommandExecuted(object sender, ExecutedRoutedEventArgs e)
+        private void UniqueCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            this.DialogResult = true;
-        }
-
-        private void OkCommandCanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(this.Title.Text) || !Decimal.TryParse(this.BookValue.Text, out decimal result))
+            switch ((e.Source as Button).Name)
             {
+                case "OkButton":
+                    {
+                        this.DialogResult = true;
+                    }
+                    break;
+                case "CancelButton":
+                    {
+                        this.DialogResult = false;
+                    }
+                    break;
             }
-            else
+        }
+
+        private void UniqueCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            switch ((e.Source as Button).Name)
             {
-                e.CanExecute = true;
+                case "OkButton":
+                    {
+                        if (string.IsNullOrEmpty(this.Title.Text) || !Decimal.TryParse(this.BookValue.Text, out decimal result))
+                        {
+                            e.CanExecute = false;
+                        }
+                        else
+                        {
+                            e.CanExecute = true;
+                        }
+                    }
+                    break;
+                case "CancelButton":
+                    {
+                        e.CanExecute = true;
+                    }
+                    break;
             }
-        }
-
-        private void CancelCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            this.DialogResult = false;
-        }
-
-        private void CancelCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
         }
     }
 }

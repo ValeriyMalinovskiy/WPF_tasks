@@ -29,40 +29,85 @@ namespace Author_s_book_list
             this.AuthorListView.ItemsSource = AuthorCollection;
         }
 
-        //private void Bind_Executed(object sender, ExecutedRoutedEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        private void NewCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void UniqueCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            if ((e.Source as Button).Name == "NewBookButton")
+            switch (e.Source.GetType().Name)
             {
-                bool newBookSucc = false;
-                Book tempBook = new Book();
-                NewBookWindow newBookWindow = new NewBookWindow(tempBook);
-                newBookSucc = newBookWindow.ShowDialog().Value;
-                if (newBookSucc)
-                {
-                    tempBook.IsNew = false;
-                    (this.AuthorListView.SelectedItem as Author).BookCollection.Add(tempBook);
-                }
-            }
-            else
-            {
-                bool newAuthSucc = false;
-                Author tempAuth = new Author();
-                NewAuthorWindow newAuthorWindow = new NewAuthorWindow(tempAuth);
-                newAuthSucc = newAuthorWindow.ShowDialog().Value;
-                if (newAuthSucc)
-                {
-                    tempAuth.IsNew = false;
-                    this.AuthorCollection.Add(tempAuth);
-                }
+                case "Button":
+                    {
+                        switch ((e.Source as Button).Name)
+                        {
+                            case "NewBookButton":
+                                {
+                                    bool newBookSucc = false;
+                                    Book tempBook = new Book();
+                                    NewBookWindow newBookWindow = new NewBookWindow(tempBook);
+                                    newBookSucc = newBookWindow.ShowDialog().Value;
+                                    if (newBookSucc)
+                                    {
+                                        tempBook.IsNew = false;
+                                        (this.AuthorListView.SelectedItem as Author).BookCollection.Add(tempBook);
+                                    }
+                                }
+                                break;
+                            case "ChangeBookButton":
+                                {
+                                    NewBookWindow newBookWindow = new NewBookWindow(this.BookCollection.SelectedItem as Book);
+                                    newBookWindow.ShowDialog();
+                                }
+                                break;
+                            case "DeleteBookButton":
+                                {
+                                    if (this.BookCollection.SelectedItem != null)
+                                    {
+                                        (this.AuthorListView.SelectedItem as Author).RemoveBook((this.BookCollection.SelectedItem as Book).Id);
+                                    }
+                                }
+                                break;
+                            case "NewAuthorButton":
+                                {
+                                    bool newAuthSucc = false;
+                                    Author tempAuth = new Author();
+                                    NewAuthorWindow newAuthorWindow = new NewAuthorWindow(tempAuth);
+                                    newAuthSucc = newAuthorWindow.ShowDialog().Value;
+                                    if (newAuthSucc)
+                                    {
+                                        tempAuth.IsNew = false;
+                                        this.AuthorCollection.Add(tempAuth);
+                                    }
+                                }
+                                break;
+                            case "ChangeAuthorButton":
+                                {
+                                    NewAuthorWindow newAuthorWindow = new NewAuthorWindow(this.AuthorListView.SelectedItem as Author);
+                                    newAuthorWindow.ShowDialog();
+                                }
+                                break;
+                            case "DeleteAuthorButton":
+                                {
+                                    if (this.AuthorListView.SelectedItem != null)
+                                    {
+                                        this.AuthorCollection.Remove(this.AuthorListView.SelectedItem as Author);
+                                    }
+                                }
+                                break;
+                        }
+                        break;
+                    }
+                case "MenuItem":
+                    {
+                        //if ((e.Source as MenuItem).Name == "NewBookMenuItem" && this.AuthorListView.SelectedItem == null)
+                        //{
+                        //}
+                        //else
+                        {
+                        }
+                        break;
+                    }
             }
         }
 
-        private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        private void UniqueCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             switch (e.Source.GetType().Name)
             {
@@ -78,14 +123,30 @@ namespace Author_s_book_list
                                     }
                                 }
                                 break;
+                            case "ChangeBookButton":
+                            case "DeleteBookButton":
+                                {
+                                    if (this.BookCollection.SelectedItem != null)
+                                    {
+                                        e.CanExecute = true;
+                                    }
+                                }
+                                break;
+                            case "NewAuthorButton":
+                                {
+                                    e.CanExecute = true;
+                                }
+                                break;
+                            case "ChangeAuthorButton":
+                            case "DeleteAuthorButton":
+                                {
+                                    if (this.AuthorListView.SelectedItem != null)
+                                    {
+                                        e.CanExecute = true;
+                                    }
+                                }
+                                break;
                         }
-                        //if ((e.Source as Button).Name == "NewBookButton" && this.AuthorListView.SelectedItem == null)
-                        //{
-                        //}
-                        //else
-                        //{
-                        //    e.CanExecute = true;
-                        //}
                         break;
                     }
                 case "MenuItem":
@@ -99,54 +160,6 @@ namespace Author_s_book_list
                         }
                         break;
                     }
-            }
-        }
-
-        private void DeleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            if ((e.Source as Button).Name == "DeleteBookButton")
-            {
-                (this.AuthorListView.SelectedItem as Author).RemoveBook((this.BookCollection.SelectedItem as Book).Id);
-            }
-            else
-            {
-                this.AuthorCollection.Remove(this.AuthorListView.SelectedItem as Author);
-            }
-        }
-
-        private void DeleteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            if ((e.Source as Button).Name == "DeleteBookButton" && this.BookCollection.SelectedItem == null)
-            {
-            }
-            else if (this.AuthorListView.SelectedItem != null)
-            {
-                e.CanExecute = true;
-            }
-        }
-
-        private void ChangeCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            if ((e.Source as Button).Name == "ChangeBookButton")
-            {
-                NewBookWindow newBookWindow = new NewBookWindow(this.BookCollection.SelectedItem as Book);
-                newBookWindow.ShowDialog();
-            }
-            else
-            {
-                NewAuthorWindow newAuthorWindow = new NewAuthorWindow(this.AuthorListView.SelectedItem as Author);
-                newAuthorWindow.ShowDialog();
-            }
-        }
-
-        private void ChangeCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            if ((e.Source as Button).Name == "ChangeBookButton" && this.BookCollection.SelectedItem == null)
-            {
-            }
-            else if (this.AuthorListView.SelectedItem != null)
-            {
-                e.CanExecute = true;
             }
         }
     }

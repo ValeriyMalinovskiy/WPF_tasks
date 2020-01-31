@@ -10,13 +10,9 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib">
 
     <Window.CommandBindings>
-        <CommandBinding Command="command:CustomCommands.Ok"
-                        Executed="OkCommandExecuted"
-                        CanExecute="OkCommandCanExecute">
-        </CommandBinding>
-        <CommandBinding Command="command:CustomCommands.Cancel"
-                        Executed="CancelCommand_Executed"
-                        CanExecute="CancelCommand_CanExecute">
+        <CommandBinding Command="command:CustomCommand.UniqueCommand"
+                        Executed="UniqueCommand_Executed"
+                        CanExecute="UniqueCommand_CanExecute">
         </CommandBinding>
     </Window.CommandBindings>
 
@@ -50,8 +46,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="10" Command="command:CustomCommands.Ok">Ok</Button>
-            <Button Grid.Column="1" Margin="10" Command="command:CustomCommands.Cancel">Cancel</Button>
+            <Button x:Name="OkButton" Grid.Column="0" Margin="10" Command="command:CustomCommand.UniqueCommand">Ok</Button>
+            <Button x:Name="CancelButton" Grid.Column="1" Margin="10" Command="command:CustomCommand.UniqueCommand">Cancel</Button>
         </Grid>
     </StackPanel>
 </Window>
