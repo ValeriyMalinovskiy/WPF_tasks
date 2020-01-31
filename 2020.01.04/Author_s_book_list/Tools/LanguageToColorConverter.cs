@@ -1,19 +1,16 @@
-﻿using Author_s_book_list.Class;
-using Author_s_book_list.Enums;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
 namespace Author_s_book_list.Tools
 {
-    class LanguageToColorConverter : IValueConverter
+    internal class LanguageToColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is null)
             {
-                
                 return Colors.White;
             }
             else

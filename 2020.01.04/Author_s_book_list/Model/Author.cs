@@ -47,10 +47,5 @@ namespace Author_s_book_list.Class
         {
             this.BookCollection.Remove(this.BookCollection.First(b => b.Id == bookId));
         }
-
-        public override string ToString()
-        {
-            return this.FirstName.ToString() + " " + this.LastName.ToString();
-        }
     }
 }

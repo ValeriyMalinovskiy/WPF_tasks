@@ -26,6 +26,7 @@ namespace Author_s_book_list.Views
                         this.DialogResult = true;
                     }
                     break;
+
                 case "CancelButton":
                     {
                         this.DialogResult = false;
@@ -50,6 +51,7 @@ namespace Author_s_book_list.Views
                         }
                     }
                     break;
+
                 case "CancelButton":
                     {
                         e.CanExecute = true;

@@ -25,6 +25,7 @@ namespace Author_s_book_list.Views
                         this.DialogResult = true;
                     }
                     break;
+
                 case "CancelButton":
                     {
                         this.DialogResult = false;
@@ -39,7 +40,7 @@ namespace Author_s_book_list.Views
             {
                 case "OkButton":
                     {
-                        if (string.IsNullOrEmpty(this.PlaceOfBirthBox.Text) || string.IsNullOrEmpty(this.FirstNameBox.Text) || string.IsNullOrEmpty(this.LastNameBox.Text) || this.LanguageBox.SelectedItem == null || this.CountryBox.SelectedItem == null)
+                        if (string.IsNullOrWhiteSpace(this.PlaceOfBirthBox.Text) || string.IsNullOrWhiteSpace(this.FirstNameBox.Text) || string.IsNullOrWhiteSpace(this.LastNameBox.Text) || this.LanguageBox.SelectedItem == null || this.CountryBox.SelectedItem == null)
                         {
                             e.CanExecute = false;
                         }
@@ -49,6 +50,7 @@ namespace Author_s_book_list.Views
                         }
                     }
                     break;
+
                 case "CancelButton":
                     {
                         e.CanExecute = true;
