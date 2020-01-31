@@ -61,9 +61,9 @@
     <Compile Include="Model\EntityBase.cs" />
     <Compile Include="Enums\Country.cs" />
     <Compile Include="Enums\Language.cs" />
-    <Compile Include="Enums\City.cs" />
     <Compile Include="Tools\IdGenerator.cs" />
     <Compile Include="Tools\IsNewToTextConverter.cs" />
+    <Compile Include="Tools\LanguageToColorConverter.cs" />
     <Compile Include="Views\AuthorDetails.xaml.cs">
       <DependentUpon>AuthorDetails.xaml</DependentUpon>
     </Compile>

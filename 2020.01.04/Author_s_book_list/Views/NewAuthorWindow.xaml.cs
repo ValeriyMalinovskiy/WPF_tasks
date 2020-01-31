@@ -39,7 +39,7 @@ namespace Author_s_book_list.Views
             {
                 case "OkButton":
                     {
-                        if (string.IsNullOrEmpty(this.PlaceOfBirth.Text) || string.IsNullOrEmpty(this.FirstName.Text) || string.IsNullOrEmpty(this.LastName.Text))
+                        if (string.IsNullOrEmpty(this.PlaceOfBirthBox.Text) || string.IsNullOrEmpty(this.FirstNameBox.Text) || string.IsNullOrEmpty(this.LastNameBox.Text) || this.LanguageBox.SelectedItem == null || this.CountryBox.SelectedItem == null)
                         {
                             e.CanExecute = false;
                         }

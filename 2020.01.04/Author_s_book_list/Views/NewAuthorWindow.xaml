@@ -20,7 +20,6 @@
         </CommandBinding>
     </Window.CommandBindings>
 
-
     <Window.Resources>
         <ObjectDataProvider x:Key="countryEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -32,12 +31,8 @@
                 <x:Type TypeName="LanguageAlias:Language"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-        <ObjectDataProvider x:Key="cityEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="CityAlias:City"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
         <convert:IsNewToTextConverter x:Key="IsNewToTextConverter"/>
+        <convert:LanguageToColorConverter x:Key="LanguageToColorConverter"/>
     </Window.Resources>
 
     <StackPanel>
@@ -62,12 +57,12 @@
             <Label Grid.Row="4">Language</Label>
             <Label Grid.Row="5">Place of Birth</Label>
 
-            <TextBox x:Name="FirstName" Grid.Row="0" Grid.Column="1" Text="{Binding Path=FirstName}"></TextBox>
-            <TextBox x:Name="LastName" Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}"></TextBox>
-            <DatePicker Name="DateOfBirth" Grid.Row="2" Grid.Column="1" SelectedDate="{Binding Path=DateOfBirth}"></DatePicker>
-            <ComboBox Name="Country" Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Source={StaticResource countryEnum}}" SelectedItem="{Binding Path=Country}"></ComboBox>
-            <ComboBox Name="Language" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Source={StaticResource languageEnum}}" SelectedItem="{Binding Path=Language}"></ComboBox>
-            <TextBox Name="PlaceOfBirth" Grid.Row="5" Grid.Column="1" Text="{Binding Path=PlaceOfBirth}"></TextBox>
+            <TextBox x:Name="FirstNameBox" Grid.Row="0" Grid.Column="1" Text="{Binding Path=FirstName}"></TextBox>
+            <TextBox x:Name="LastNameBox" Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}"></TextBox>
+            <DatePicker x:Name="DateOfBirth" Grid.Row="2" Grid.Column="1" SelectedDate="{Binding Path=DateOfBirth}"></DatePicker>
+            <ComboBox x:Name="CountryBox" Grid.Row="3" Grid.Column="1" SelectedItem="{Binding Path=Country}" ItemsSource="{Binding  Source={StaticResource countryEnum}}"></ComboBox>
+            <ComboBox x:Name="LanguageBox" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Source={StaticResource languageEnum}}" SelectedItem="{Binding Path=Language}"></ComboBox>
+            <TextBox x:Name="PlaceOfBirthBox" Grid.Row="5" Grid.Column="1" Text="{Binding Path=PlaceOfBirth}"></TextBox>
         </Grid>
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
@@ -78,5 +73,9 @@
             <Button x:Name="CancelButton" Grid.Column="1" Margin="10" Command="command:CustomCommand.UniqueCommand">Cancel</Button>
         </Grid>
     </StackPanel>
+
+    <Window.Background>
+        <SolidColorBrush Color="{Binding ElementName=LanguageBox, Path=SelectedValue, Converter={StaticResource LanguageToColorConverter}}"></SolidColorBrush>
+    </Window.Background>
 
 </Window>

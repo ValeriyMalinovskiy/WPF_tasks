@@ -2,7 +2,7 @@
 {
     public enum Country
     {
-        USA,
+        USA = 1,
         Germany,
         Russia,
         Ukraine
