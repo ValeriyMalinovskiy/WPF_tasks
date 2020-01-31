@@ -51,17 +51,59 @@
             </Grid>
         </Grid>
         <Menu Grid.Row="0" >
-            <MenuItem x:Name="FileMenu" Margin="5" Header="File">
-                <MenuItem x:Name="NewAuthorMenuItem" Header="New Author" Command="command:CustomCommand.UniqueCommand"></MenuItem>
-                <MenuItem x:Name="NewBookMenuItem" Header="New Book" Command="command:CustomCommand.UniqueCommand"></MenuItem>
+            <MenuItem Margin="5" Header="File">
+                <MenuItem x:Name="NewAuthorMenuItem" Header="New Author" Command="command:CustomCommand.UniqueCommand">
+                    <MenuItem.Icon>
+                        <Image Source = "/Author_s_book_list;component/Views/Icons/Add-icon.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="command:CustomCommand.UniqueCommand" Executed="UniqueCommand_Executed" CanExecute="UniqueCommand_CanExecute"></CommandBinding>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
+                <MenuItem x:Name="NewBookMenuItem" Header="New Book" Command="command:CustomCommand.UniqueCommand">
+                    <MenuItem.Icon>
+                        <Image Source = "/Author_s_book_list;component/Views/Icons/Add-icon.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="command:CustomCommand.UniqueCommand" Executed="UniqueCommand_Executed" CanExecute="UniqueCommand_CanExecute"></CommandBinding>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
                 <Separator></Separator>
-                <!--<MenuItem x:Name="DeleteAuthorMenuItem" Header="Remove Author" Command="Delete"></MenuItem>-->
-                <!--<MenuItem x:Name="DeleteBookMenuItem" Header="Remove Book" Command="Delete"></MenuItem>-->
+                <MenuItem x:Name="DeleteAuthorMenuItem" Header="Remove Author" Command="command:CustomCommand.UniqueCommand">
+                    <MenuItem.Icon>
+                        <Image Source = "/Author_s_book_list;component/Views/Icons/Remove-icon.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="command:CustomCommand.UniqueCommand" Executed="UniqueCommand_Executed" CanExecute="UniqueCommand_CanExecute"></CommandBinding>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
+                <MenuItem x:Name="DeleteBookMenuItem" Header="Remove Book" Command="command:CustomCommand.UniqueCommand">
+                    <MenuItem.Icon>
+                        <Image Source = "/Author_s_book_list;component/Views/Icons/Remove-icon.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="command:CustomCommand.UniqueCommand" Executed="UniqueCommand_Executed" CanExecute="UniqueCommand_CanExecute"></CommandBinding>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
             </MenuItem>
-            <!--<MenuItem Margin="5" Header="Edit">
-                <Label>Edit Author</Label>
-                <Label>Edit Book</Label>
-            </MenuItem>-->
+            <MenuItem Header="Edit" Margin="5">
+                <MenuItem x:Name="EditAuthorMenuItem" Header="Edit Author" Command="command:CustomCommand.UniqueCommand">
+                    <MenuItem.Icon>
+                        <Image Source = "/Author_s_book_list;component/Views/Icons/User-icon.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="command:CustomCommand.UniqueCommand" Executed="UniqueCommand_Executed" CanExecute="UniqueCommand_CanExecute"></CommandBinding>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
+                <MenuItem x:Name="EditBookMenuItem" Header="Edit Book" Command="command:CustomCommand.UniqueCommand">
+                    <MenuItem.Icon>
+                        <Image Source = "/Author_s_book_list;component/Views/Icons/Document-icon.png"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="command:CustomCommand.UniqueCommand" Executed="UniqueCommand_Executed" CanExecute="UniqueCommand_CanExecute"></CommandBinding>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
+            </MenuItem>
         </Menu>
         <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal" >
             <Button x:Name="NewAuthorButton" Padding="2" Command="command:CustomCommand.UniqueCommand">New</Button>
