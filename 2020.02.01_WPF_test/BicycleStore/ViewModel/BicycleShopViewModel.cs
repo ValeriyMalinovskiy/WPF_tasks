@@ -1,20 +1,11 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using BicycleStore.Command;
+using BicycleStore.Model;
+using BicycleStore.Model.Enums;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using BicycleStore.Command;
-using BicycleStore.Model.Enums;
-using BicycleStore.Model;
-using BicycleStore.View;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BicycleStore.ViewModel
-
 {
     class BicycleShopViewModel : INotifyPropertyChanged
     {
@@ -98,9 +89,9 @@ namespace BicycleStore.ViewModel
         private void SetDefaultsCommandExecuted(object obj)
         {
             this.SelectedBicycle.Brand = "Brand";
-            this.SelectedBicycle.BicycleFrameSize = (FrameSize)0;
+            this.SelectedBicycle.BicycleFrameSize = null;
             this.SelectedBicycle.Model = "Model";
-            this.SelectedBicycle.OriginCountry = (Country)0;
+            this.SelectedBicycle.OriginCountry = null;
             this.SelectedBicycle.Price = 0;
             this.SelectedBicycle.Year = 0;
         }

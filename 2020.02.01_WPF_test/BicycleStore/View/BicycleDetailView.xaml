@@ -91,7 +91,7 @@
         <TextBox
             Grid.Row="2"
             Grid.Column="0"
-            Text="{Binding Path=Brand}" />
+            Text="{Binding Path=Brand, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
@@ -99,21 +99,22 @@
         <TextBox
             Grid.Row="2"
             Grid.Column="2"
-            Text="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=Price}" />
         <ComboBox
             Grid.Row="2"
             Grid.Column="3"
             ItemsSource="{Binding Source={StaticResource countryEnum}}"
-            SelectedItem="{Binding Path=OriginCountry, UpdateSourceTrigger=PropertyChanged}" />
+            SelectedItem="{Binding Path=OriginCountry}" />
         <ComboBox
+            x:Name="FrameSizeComboBox"
             Grid.Row="2"
             Grid.Column="4"
             ItemsSource="{Binding Source={StaticResource frameSizeEnum}}"
-            SelectedItem="{Binding Path=BicycleFrameSize, UpdateSourceTrigger=PropertyChanged}" />
+            SelectedItem="{Binding Path=BicycleFrameSize}" />
         <TextBox
             Grid.Row="2"
             Grid.Column="5"
-            Text="{Binding Path=Year, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=Year}" />
 
     </Grid>
 </UserControl>

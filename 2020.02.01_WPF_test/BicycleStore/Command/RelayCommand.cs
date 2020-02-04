@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-
 namespace BicycleStore.Command
-
 {
     public class RelayCommand : ICommand
     {
@@ -54,7 +52,6 @@ namespace BicycleStore.Command
             EventHandler handler = this.CanExecuteChangedInternal;
             if (handler != null)
             {
-                //DispatcherHelper.BeginInvokeOnUIThread(() => handler.Invoke(this, EventArgs.Empty));
                 handler.Invoke(this, EventArgs.Empty);
             }
         }
