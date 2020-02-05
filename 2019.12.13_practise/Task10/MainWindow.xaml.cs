@@ -20,8 +20,6 @@ namespace Task10
     /// </summary>
     public partial class MainWindow : Window
     {
-        //bool IsButtonEnabled;
-
         public MainWindow()
         {
 
@@ -30,37 +28,12 @@ namespace Task10
             bind.Executed += Bind_Executed;
             this.CommandBindings.Add(bind);
 
-            //        < StackPanel >
-            //< Button Margin = "50" Content = "Open" Command = "ApplicationCommands.Open" ></ Button >
-
-            //     < CheckBox x: Name = "CheckStatusBox" Margin = "50" Content = "Turn on to enable button" Command = "local:MyCommands.ChangeButtonStatus" ></ CheckBox >
-
-            //         </ StackPanel >
-
-            //                 var bind = new CommandBinding(ApplicationCommands.Open);
-
-            //    bind.Executed += Bind_Executed;
-            //    bind.CanExecute += Bind_CanExecute;
-
-            //    this.CommandBindings.Add(bind);
-
-            //    var bind2 = new CommandBinding(MyCommands.ChangeButtonStatus);
-
-            //    bind2.Executed += Bind2_Executed;
-            //    //bind2.CanExecute += Bind_CanExecute;
-
-            //    this.CommandBindings.Add(bind2);
         }
 
         private void Bind_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            bool isZero = true;
-            string tempString = null;
-            if (this.InputBox.Text.Length == 1 && this.InputBox.Text == "0")
-            {
-                isZero = true;
-            }
-            else isZero = false;
+            bool AddDigit = true;
+            string tempString = "0";
 
             Button button = e.Source as Button;
             switch (button.Name)
@@ -93,36 +66,52 @@ namespace Task10
                     tempString = "9";
                     break;
                 case "Zero":
-                    tempString = "0";
+                    {
+                        tempString = "0";
+                    }
                     break;
                 case "Del":
-                    this.InputBox.Text = DeleteLastChar(this.InputBox.Text);
+                    string tempString2 = DeleteLastChar(this.InputBox.Text);
+                    if (tempString2.Equals("0"))
+                    {
+                        tempString = "0";
+                    }
+                    else
+                        tempString = tempString2;
+                    AddDigit = false;
                     break;
                 case "Ce":
-                    this.InputBox.Text = string.Empty;
                     tempString = "0";
+                    AddDigit = false;
+                    break;
+                case "C":
+                    tempString = "0";
+                    AddDigit = false;
                     break;
             }
 
-            switch (isZero)
+            if (this.InputBox.Text.Length == 1 && this.InputBox.Text == "0" && AddDigit)
             {
-                case true:
-                    {
-                        this.InputBox.Text = tempString;
-                    }
-                    break;
-
-                case false:
-                    {
-                        this.InputBox.Text += tempString;
-                    }
-                    break;
+                this.InputBox.Text = tempString;
             }
+            else if(AddDigit)
+            {
+                this.InputBox.Text += tempString;
+            }
+            else
+            {
+                this.InputBox.Text = tempString;
+            }
+
         }
 
         private string DeleteLastChar(string str)
         {
-            if (str.Length > 1)
+            if (str.Equals("0"))
+            {
+                return "0";
+            }
+            else if (str.Length > 1)
             {
                 char[] tempArr = str.ToArray();
                 StringBuilder sb = new StringBuilder();
@@ -132,49 +121,13 @@ namespace Task10
                 }
                 return sb.ToString();
             }
-            else if (str.Length==1)
+            else
             {
-                return this.InputBox.Text = "0";
+                return "0";
             }
-            return str;
         }
-
-        //private void Grid_Click(object sender, RoutedEventArgs e)
-        //{
-        //}
-
-        //    private void Bind2_Executed(object sender, ExecutedRoutedEventArgs e)
-        //    {
-        //        //throw new NotImplementedException();
-        //        this.IsButtonEnabled = !this.IsButtonEnabled;
-        //    }
-
-        //    private void Bind_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        //    {
-        //        //e.CanExecute = DateTime.Now.Second % 2 == 0;
-        //        //e.CanExecute = this.CheckStatusBox.IsChecked.Value;
-        //        e.CanExecute = this.IsButtonEnabled;
-        //    }
-
-        //    private void Bind_Executed(object sender, ExecutedRoutedEventArgs e)
-        //    {
-        //        new MainWindow().ShowDialog();
-        //    }
-
-        //    private void Buttons_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        //    {
-
     }
 
-    //}
-    //public static class MyCommands
-    //{
-    //    public static RoutedCommand ChangeButtonStatus { get; set; }
-    //    static MyCommands()
-    //    {
-    //        ChangeButtonStatus = new RoutedCommand(nameof(ChangeButtonStatus), typeof(MainWindow));
-    //    }
-    //}
     public static class CustomCommands
     {
         public static RoutedCommand CalcButtonCommand { get; set; }
@@ -184,4 +137,5 @@ namespace Task10
         }
     }
 }
+
 
