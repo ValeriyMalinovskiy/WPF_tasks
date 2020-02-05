@@ -1,0 +1,86 @@
+﻿<Window
+    x:Class="Task9.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Task9"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="500"
+    Height="350"
+    mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <Expander Margin="20" Header="Name">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="0.3*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="5">
+                    First Name
+                </TextBlock>
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="5">
+                    Last Name
+                </TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" />
+                <TextBox Grid.Row="1" Grid.Column="1" />
+            </Grid>
+        </Expander>
+        <Expander Margin="20" Header="Address">
+            <Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="0.3*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="5">
+                        Street
+                    </TextBlock>
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="5">
+                        City
+                    </TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="1" />
+                    <TextBox Grid.Row="1" Grid.Column="1" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="5">
+                        State
+                    </TextBlock>
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="5">
+                        Zip
+                    </TextBlock>
+                    <TextBox Grid.Row="2" Grid.Column="1" />
+                    <TextBox Grid.Row="3" Grid.Column="1" />
+                </Grid>
+            </Grid>
+        </Expander>
+    </StackPanel>
+</Window>

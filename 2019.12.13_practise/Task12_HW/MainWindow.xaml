@@ -1,0 +1,314 @@
+﻿<Window
+    x:Class="Task12_HW.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Task12_HW"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="350"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Background="LightBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Background="Transparent">
+            <Viewbox>
+                <TextBlock x:Name="InputBox" Text="0" />
+            </Viewbox>
+        </TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="%" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="1/x" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Seven"
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="7" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Four"
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="4" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="One"
+                Grid.Row="4"
+                Grid.Column="0"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="1" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Margin="3"
+                Padding="5"
+                Background="LightGray">
+                <Viewbox>
+                    <TextBlock Text="+/-" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Ce"
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="3"
+                Padding="5"
+                Background="Beige"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="CE" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="x^2" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Five"
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="5" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Two"
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="2" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Zero"
+                Grid.Row="5"
+                Grid.Column="1"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="0" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Eight"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="8" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Nine"
+                Grid.Row="2"
+                Grid.Column="2"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="9" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Six"
+                Grid.Row="3"
+                Grid.Column="2"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="6" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Three"
+                Grid.Row="4"
+                Grid.Column="2"
+                Margin="3"
+                Padding="5"
+                Background="LightGray"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="3" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="5"
+                Grid.Column="2"
+                Margin="3"
+                Padding="5"
+                Background="LightGray">
+                <Viewbox>
+                    <TextBlock Text="." />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="2"
+                Grid.Column="3"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="X" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="3"
+                Grid.Column="3"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="-" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="4"
+                Grid.Column="3"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="+" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="5"
+                Grid.Column="3"
+                Margin="3"
+                Padding="5"
+                Background="RosyBrown">
+                <Viewbox>
+                    <TextBlock Text="=" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="C"
+                Grid.Row="0"
+                Grid.Column="2"
+                Margin="3"
+                Padding="5"
+                Background="Beige"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="C" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="sqr" />
+                </Viewbox>
+            </Button>
+            <Button
+                x:Name="Del"
+                Grid.Row="0"
+                Grid.Column="3"
+                Margin="3"
+                Padding="5"
+                Background="Beige"
+                Command="local:CustomCommands.CalcButtonCommand">
+                <Viewbox>
+                    <TextBlock Text="del" />
+                </Viewbox>
+            </Button>
+            <Button
+                Grid.Row="1"
+                Grid.Column="3"
+                Margin="3"
+                Padding="5"
+                Background="Beige">
+                <Viewbox>
+                    <TextBlock Text="/" />
+                </Viewbox>
+            </Button>
+        </Grid>
+    </Grid>
+
+</Window>
