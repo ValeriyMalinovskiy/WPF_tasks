@@ -1,0 +1,33 @@
+﻿<Window x:Class="Task11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task11"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ComboBox>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/ferrari.jfif"></Image>
+                <Label>Ferrari</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/opel.jfif"></Image>
+                <Label>Opel</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/toyota.jfif"></Image>
+                <Label>Toyota</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/ford.jfif"></Image>
+                <Label>Ford</Label>
+            </StackPanel>
+        </ComboBox>
+    </Grid>
+</Window>
