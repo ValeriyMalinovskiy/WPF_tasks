@@ -1,33 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace Task10
+namespace Task12_HW
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
-
             InitializeComponent();
             CommandBinding bind = new CommandBinding(CustomCommands.CalcButtonCommand);
             bind.Executed += Bind_Executed;
             this.CommandBindings.Add(bind);
-
         }
 
         private void Bind_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -94,7 +80,7 @@ namespace Task10
             {
                 this.InputBox.Text = tempString;
             }
-            else if(AddDigit)
+            else if (AddDigit)
             {
                 this.InputBox.Text += tempString;
             }
@@ -102,7 +88,6 @@ namespace Task10
             {
                 this.InputBox.Text = tempString;
             }
-
         }
 
         private string DeleteLastChar(string str)

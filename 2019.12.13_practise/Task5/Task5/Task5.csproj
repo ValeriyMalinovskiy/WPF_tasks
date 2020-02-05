@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67D53729-FAFF-4859-8CA0-758E73A4F3D2}</ProjectGuid>
+    <ProjectGuid>{4D1EB789-73B7-4BF7-9742-F4DDB23104DB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Task10</RootNamespace>
-    <AssemblyName>Task10</AssemblyName>
+    <RootNamespace>Task5</RootNamespace>
+    <AssemblyName>Task5</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
