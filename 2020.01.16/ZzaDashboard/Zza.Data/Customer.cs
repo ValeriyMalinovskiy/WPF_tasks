@@ -24,5 +24,10 @@ namespace Zza.Data
         public string State { get; set; }
         public string Zip { get; set; }
         public List<Order> Orders { get; set; }
+
+        public override string ToString()
+        {
+            return this.FullName;
+        }
     }
 }

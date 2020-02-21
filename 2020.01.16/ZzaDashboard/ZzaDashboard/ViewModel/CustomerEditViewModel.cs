@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Zza.Data;
 using ZzaDashboard.Services;
@@ -20,13 +18,13 @@ namespace ZzaDashboard.ViewModel
         public CustomerEditViewModel()
         {
             this.CustomersRepository = new CustomersRepository();
-            this.Customer = this.CustomersRepository.GetCustomerAsync(new Guid("11DA4696-CEA3-4A6D-8E83-013F1C479618")).Result;
-            this.SaveCommand = new RelayCommand(this.SaveCommandExecute, this.SaveCommandCanExecute);
+           // this.Customer = CustomersRepository.GetCustomerAsync(new Guid("11DA4696-CEA3-4A6D-8E83-013F1C479618")).Result;
+            this.SaveCommand = new RelayCommand(SaveCommandExecute, SaveCommandCanExecute);
         }
 
         public bool SaveCommandCanExecute(object obj)
         {
-            if (string.IsNullOrWhiteSpace(this.Customer.FirstName) || string.IsNullOrWhiteSpace(this.Customer.LastName) || string.IsNullOrWhiteSpace(this.Customer.Phone))
+            if (string.IsNullOrWhiteSpace(Customer.FirstName) || string.IsNullOrWhiteSpace(Customer.LastName) || string.IsNullOrWhiteSpace(Customer.Phone))
             {
                 return false;
             }
@@ -35,7 +33,7 @@ namespace ZzaDashboard.ViewModel
 
         public void SaveCommandExecute(object obj)
         {
-
+            this.CustomersRepository.UpdateCustomerAsync(this.Customer);
         }
     }
 }

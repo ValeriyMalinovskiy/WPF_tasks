@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Zza.Data;
 using ZzaDashboard.Services;
+using ZzaDashboard.ViewModel;
 
 namespace ZzaDashboard.View
 {
@@ -24,6 +25,10 @@ namespace ZzaDashboard.View
 
         public CustomerEditView()
         {
+            //
+            //Second option - Code Behind
+            //
+            //this.DataContext = new CustomerEditViewModel();
             InitializeComponent();
         }
     }
